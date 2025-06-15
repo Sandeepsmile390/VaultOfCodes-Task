@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Programming Internship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #22c55e;
+            --bg: #f4f6fb;
+            --container-bg: #fff;
+            --border: #e5e7eb;
+            --shadow: 0 8px 32px rgba(37, 99, 235, 0.10);
+            --shadow-hover: 0 16px 48px rgba(37, 99, 235, 0.18);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent: #f1f5fd;
+        }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 540px;
+            margin: 60px auto;
+            background: var(--container-bg);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 40px 36px 32px 36px;
+            border: 1.5px solid var(--border);
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+            position: relative;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -8px; left: -8px; right: -8px; bottom: -8px;
+            border-radius: 22px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            opacity: 0.07;
+            z-index: 0;
+        }
+        .container:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+            transform: translateY(-4px) scale(1.025);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+        ul {
+            color: var(--text-muted);
+            margin-bottom: 22px;
+            font-size: 1.08rem;
+            padding-left: 22px;
+            z-index: 1;
+            position: relative;
+        }
+        ul li {
+            margin-bottom: 7px;
+        }
+        p {
+            color: var(--text-main);
+            font-size: 1.13rem;
+            line-height: 1.7;
+            background: var(--accent);
+            padding: 18px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.06);
+            z-index: 1;
+            position: relative;
+        }
+        @media (max-width: 700px) {
+            .container {
+                max-width: 95vw;
+                padding: 24px 8vw 20px 8vw;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python Programming Internship</h1>
+        <ul>
+            <li>Duration: 1 month / 2 months</li>
+            <li>Location: Virtual</li>
+            <li>Stipend: -</li>
+            <li>Start date: 05/11/2023</li>
+        </ul>
+        <p>
+            Work on Python projects and enhance your programming and problem-solving skills.
+        </p>
+    </div>
+</body>
+</html>
