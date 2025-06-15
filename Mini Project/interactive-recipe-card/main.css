@@ -1,0 +1,288 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --primary: #7b3f00;
+  --accent: #ffb347;
+  --bg: #fff8f0;
+  --card-bg: #fff;
+  --text: #222;
+  --muted: #888;
+  --radius: 18px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+  background-color: #ffffffa1; /* Light gray */
+  font-family: 'Roboto', Arial, sans-serif;
+  color: var(--text);
+  margin: 50px;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-card {
+  background-color: #f3e5d7; /* Light cream */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 100vw;
+  width: 80vw;
+  min-height: 100vh;
+  padding: 2rem 1rem 1.5rem 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: box-shadow var(--transition);
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Remove hover effect */
+.recipe-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.recipe-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px; 
+  object-fit: cover;
+  max-height: 320px;
+  box-shadow: 0 2px 12px rgba(123,63,0,0.07);
+  margin-bottom: 0.5rem;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.toggle-btn {
+  background: var(--accent);
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background var(--transition), color var(--transition);
+  box-shadow: 0 2px 8px rgba(255,179,71,0.08);
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toggle-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.ingredients-list,
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  display: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ingredients-list.visible,
+.steps-list.visible {
+  display: block;
+  opacity: 1;
+}
+
+.ingredients-list li,
+.steps-list li {
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  margin-bottom: 0.3rem;
+  transition: background var(--transition), color var(--transition), text-decoration var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+
+
+
+.steps-list li.active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 500;
+  animation: pulse 0.7s;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--accent); }
+  70% { box-shadow: 0 0 0 10px rgba(255,179,71,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,179,71,0); }
+}
+
+.progress-bar-container {
+  background: transparent;
+  border-radius: 8px;
+  height: 12px;
+  width: 100%;
+  margin: 1rem 0 0.5rem 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  transition: width 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.cooking-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+  gap: 1rem;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cooking-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cooking-btn:disabled {
+  background: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.cooking-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.timer {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-top: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Example CSS */
+.recipe-row {
+  display: flex;
+  gap: 32px; /* space between columns */
+}
+
+.recipe-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Make both buttons the same size */
+.recipe-column button {
+  width: 200px;   /* Increase width as needed */
+  height: 40px;      /* Set a fixed height, adjust as needed */
+  font-size: 16px;   /* Optional: ensure consistent text size */
+  margin-bottom: 12px;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .recipe-card {
+    padding: 1rem 0.2rem;
+    min-height: 100vh;
+  }
+  .recipe-title {
+    font-size: 1.3rem;
+  }
+  .recipe-img {
+    max-height: 160px;
+  }
+  .recipe-meta {
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.95rem;
+    align-items: center;
+  }
+  .toggle-btn,
+  .cooking-btn,
+  .ingredients-list,
+  .steps-list,
+  .progress-bar-container,
+  .cooking-controls,
+  .timer {
+    max-width: 100vw;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #fff;
+  }
+  .recipe-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    max-width: 100vw;
+  }
+  .toggle-btn, .cooking-controls, .progress-bar-container, .timer {
+    display: none !important;
+  }
+  .ingredients-list,
+  .steps-list {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
